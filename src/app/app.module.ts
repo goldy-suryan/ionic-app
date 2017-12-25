@@ -7,10 +7,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { MyTeamsPage, TeamDetailsPage, TeamsPage, TournamentPage } from "../pages/exports";
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    MyTeamsPage,
+    TeamDetailsPage,
+    TeamsPage,
+    TournamentPage
   ],
   imports: [
     BrowserModule,
@@ -19,7 +25,11 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MyTeamsPage,
+    TeamDetailsPage,
+    TeamsPage,
+    TournamentPage
   ],
   providers: [
     StatusBar,
