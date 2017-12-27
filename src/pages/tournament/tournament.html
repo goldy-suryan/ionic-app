@@ -1,9 +1,11 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>Tournament Page</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    
+    <ion-list>
+        <button ion-item (click)="itemTapped($event, tournament)" *ngFor="let tournament of tournaments">{{ tournament.name }}</button>
+    </ion-list>
 </ion-content>

@@ -1,1 +1,15 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content" side="right">
+    <ion-header>
+        <ion-navbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-navbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item menuClose (click)="goToHome()">My Teams</button>
+            <button ion-item menuClose (click)="goToTournament()">Tournament</button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #content swipeBackEnabled="true" presistent="true" [root]="rootPage"></ion-nav>

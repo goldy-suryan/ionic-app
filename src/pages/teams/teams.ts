@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
-import { NavController } from "ionic-angular";
+import { NavController, NavParams, LoadingController } from "ionic-angular";
+import { TeamDetailsPage } from "../exports";
+import { EliteService } from "../shared/shared";
 
 @Component({
     selector: "teams",
@@ -7,5 +9,33 @@ import { NavController } from "ionic-angular";
 })
 
 export class TeamsPage {
+    private tournament: { id: string, name: string };
+    private teams: any;
+
+    constructor( private nav: NavController,
+                private navParams: NavParams,
+                private service: EliteService,
+                private loader: LoadingController ) {}
+    
+    ionViewDidLoad() {
+        this.tournament = this.navParams.data;
+
+        let loader = this.loader.create({
+            content: "Getting Teams..."
+        });
+
+        loader.present();
+        this.service.getTournamentsData(this.tournament.id).subscribe(
+            data => {
+                this.teams = data.teams;
+                loader.dismiss();
+            },
+            err => console.log(err)
+        );
+    }
+
+    itemTapped(event, team) {
+        this.nav.push(TeamDetailsPage, team);
+    }
     
 }
