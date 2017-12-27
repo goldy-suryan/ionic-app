@@ -8,7 +8,7 @@ import { HttpModule } from "@angular/http";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import { MyTeamsPage, TeamDetailsPage, TeamsPage, TournamentPage, GamePage } from "../pages/exports";
+import { MyTeamsPage, TeamDetailsPage, TeamsPage, TournamentPage, GamePage, TeamHomePage, StandingsPage } from "../pages/exports";
 import { EliteService } from "../pages/shared/shared";
 
 @NgModule({
@@ -19,7 +19,9 @@ import { EliteService } from "../pages/shared/shared";
     TeamDetailsPage,
     TeamsPage,
     TournamentPage,
-    GamePage
+    GamePage,
+    TeamHomePage,
+    StandingsPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,9 @@ import { EliteService } from "../pages/shared/shared";
     TeamDetailsPage,
     TeamsPage,
     TournamentPage,
-    GamePage
+    GamePage,
+    TeamHomePage,
+    StandingsPage
   ],
   providers: [
     StatusBar,

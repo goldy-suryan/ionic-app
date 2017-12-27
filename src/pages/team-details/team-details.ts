@@ -40,7 +40,7 @@ export class TeamDetailsPage {
                     })
                     .value();
 
-        console.log(this.games);
+        console.log(this.team);
     }
 
     scoreDisplay(team, score1, score2) {

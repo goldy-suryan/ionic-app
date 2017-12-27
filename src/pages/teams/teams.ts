@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams, LoadingController } from "ionic-angular";
-import { TeamDetailsPage } from "../exports";
+import { TeamHomePage } from "../exports";
 import { EliteService } from "../shared/shared";
 
 @Component({
@@ -35,7 +35,7 @@ export class TeamsPage {
     }
 
     itemTapped(event, team) {
-        this.nav.push(TeamDetailsPage, team);
+        this.nav.push(TeamHomePage, team);
     }
     
 }
