@@ -3,6 +3,7 @@ import { NavController, NavParams } from "ionic-angular";
 import { EliteService } from "../shared/shared";
 
 import * as _ from "underscore";
+import { GamePage } from "../exports";
 
 @Component({
     selector: "team-details",
@@ -40,7 +41,6 @@ export class TeamDetailsPage {
                     })
                     .value();
 
-        console.log(this.team);
     }
 
     scoreDisplay(team, score1, score2) {
@@ -52,6 +52,11 @@ export class TeamDetailsPage {
         } else {
             return "";
         }
+    }
+
+    gameClicked($event, game) {
+        let sourceGame = this.tournamentData.games.find(g => g.id === game.gameId);
+        this.nav.parent.parent.push(GamePage, sourceGame)
     }
     
 }

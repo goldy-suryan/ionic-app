@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { NavParams } from "ionic-angular";
+import { NavController, NavParams } from "ionic-angular";
 
-import { TeamDetailsPage, StandingsPage } from "../exports";
+import { TeamDetailsPage, StandingsPage, MyTeamsPage } from "../exports";
 
 @Component({
     selector: "team-home",
@@ -10,13 +10,15 @@ import { TeamDetailsPage, StandingsPage } from "../exports";
 
 export class TeamHomePage {
     team: any;
-    standingsTab: StandingsPage;
-    teamDetailsTab: TeamDetailsPage;
+    teamDetailsTab = TeamDetailsPage;
+    standingsTab = StandingsPage;
+    query: any;
 
-    constructor( private navParams: NavParams ) {
-        this.team = this.navParams.data;        
-     }
+    constructor( private nav: NavController, private navParms: NavParams ) { 
+                 this.team = this.navParms.data;
+    }
 
-    ionViewDidLoad() {
+    goHome() {
+        this.nav.popToRoot();
     }
 }

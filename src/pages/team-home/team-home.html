@@ -1,10 +1,26 @@
-<ion-header>
+<!-- <ion-header>
     <ion-navbar>
     <ion-title>Team Home Page</ion-title>        
     </ion-navbar>
 </ion-header>
 
 <ion-tabs>
-    <ion-tab tabTitle="Teams" [root]="teamDetailsTab"></ion-tab>
-    <ion-tab tabTitle="Standings" [root]="standingsTab">asdfsadfasf</ion-tab>
+    <ion-tab tabTitle="Teams" [root]="teamDetailsTab" [rootParams]="team" tabIcon="basketball"></ion-tab>
+    <ion-tab tabTitle="Standings" [root]="standingsTab" [rootParams]="team" tabIcon="podium"></ion-tab>
+</ion-tabs> -->
+
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>TeamHome Page</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only (click)="goHome()">
+                <ion-icon name="home"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-tabs>
+    <ion-tab tabTitle="Team" [root]="teamDetailsTab" [rootParams]="team" tabIcon="basketball"></ion-tab>
+    <ion-tab tabTitle="Standings" [root]="standingsTab" [rootParams]="team" tabIcon="podium"></ion-tab>
 </ion-tabs>
